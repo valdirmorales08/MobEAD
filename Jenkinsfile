@@ -3,6 +3,9 @@ pipeline {
       registry = "valdirmorales/mobead_image_build"
       registryCredential = 'dockerhub'
       dockerImage = ''
+      export DOCKER_USERNAME="valdirmorales"
+      export DOCKER_PASSWORD="Teste1971"
+      echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
     }
     agent any 
     stages { 
